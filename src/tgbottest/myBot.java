@@ -9,15 +9,14 @@ public class myBot extends TelegramLongPollingBot {
 
     @Override
     public String getBotUsername() {
-        // Return bot username
-        // If bot username is @MyAmazingBot, it must return 'MyAmazingBot'
-        return "MyBot";
+
+        return "PVV97Bot_bot";
     }
 
     @Override
     public String getBotToken() {
 
-        return null;
+        return "640047738:AAHBmMm-CqE83m5tPxX5WUgsjGN44IelLQw";
 
     }
 
@@ -29,7 +28,13 @@ public class myBot extends TelegramLongPollingBot {
 
             SendMessage message = new SendMessage();
             message.setChatId(chat_id);
-            message.setText(text);
+
+            if (text.equals("/help")) {
+                message.setText("dinax");
+            } else {
+                message.setText(text);
+
+            }
 
             try {
                 execute(message);
